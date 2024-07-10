@@ -1,5 +1,6 @@
 package baseball;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Application {
@@ -11,13 +12,21 @@ public class Application {
     	while(continueGame == 1) {
     		int answer = number();
     		boolean isCollect = false;
-    		
-    		while(isCollect) {
+    		while(! isCollect) {
     			System.out.print("숫자를 입력해주세요 : ");
-    			int baseball = sc.nextInt();
+    			int baseball = 0;
+    			try {
+    				baseball = sc.nextInt();
+    			}catch(InputMismatchException e) {
+    				System.out.println("숫자를 입력해주세요.");
+    				sc.next(); // 잘못된 값 입력 버퍼에서 제거.
+    				continue;
+    			}
     			
-    			if((baseball/100) >= 10) {
-    				System.out.println("3자리 미만의 숫자를 입력하세요");
+    			// 3자리 수가 아니면 
+    			int checkNum = (baseball/100);
+    			if(checkNum >= 10 || checkNum <= 0) {
+    				System.out.println("3자리의 숫자를 입력하세요");
     				continue;
     			}
     			
