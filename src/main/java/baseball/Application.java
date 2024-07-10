@@ -12,7 +12,9 @@ public class Application {
     
     // 정답 number를 생성하는 메소드 입니다.
     private static int number() {
+    	
     	return 0;
+    	
     }
     
     
