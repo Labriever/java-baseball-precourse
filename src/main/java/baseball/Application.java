@@ -7,6 +7,28 @@ public class Application {
         //TODO: 숫자 야구 게임 구현
     	Scanner sc = new Scanner(System.in);
     	
+    	int continueGame = 1;
+    	while(continueGame == 1) {
+    		int answer = number();
+    		boolean isCollect = false;
+    		
+    		while(isCollect) {
+    			System.out.print("숫자를 입력해주세요 : ");
+    			int baseball = sc.nextInt();
+    			
+    			if((baseball/100) >= 10) {
+    				System.out.println("3자리 미만의 숫자를 입력하세요");
+    				continue;
+    			}
+    			
+    			
+    			
+    		}
+    		
+    		System.out.println("3개의 숫자를 모두 맞췄습니다.");
+    		System.out.println("게임을 새로 시작하려면 1, 종료하려면 2를 입력하세요");
+    		continueGame = sc.nextInt();
+    	}
     	
     	sc.close();
     }
